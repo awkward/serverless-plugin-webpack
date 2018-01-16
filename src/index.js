@@ -63,7 +63,8 @@ class ServerlessPluginWebpack {
       webpackConfig,
       this.originalServicePath,
       webpackDefaultOutput,
-      webpackFolder
+      webpackFolder,
+      this.custom.typescript,
     ));
   }
 

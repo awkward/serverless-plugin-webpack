@@ -39,6 +39,7 @@ custom:
   webpack:
     config: ./path/to/config/file.js
     series: true # run Webpack in series, useful for large projects. Defaults to false.
+    typescript: true # set to true if your project uses TypeScript and have configured the appropriate Webpack loader, defaults to false
 ```
 
 The `entry` and `output` objects are set by the plugin.
