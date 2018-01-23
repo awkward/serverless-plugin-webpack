@@ -12,17 +12,15 @@ const service = require('./service');
  * @returns {object} Webpack configuration
  */
 const setEntry = (entries = [], fn, servicePath, useTypeScript) => {
-  let entries2;
-
   if (typeof entries === 'string') {
-    entries2 = [entries];
+    entries = [entries];
   }
 
   return R.assoc(
     'entry',
     R.objOf(
       service.fnPath('.js')(fn),
-      [...entries2, path.join(servicePath, service.fnPath(useTypeScript ? '.ts' : '.js')(fn))]
+      [...entries, path.join(servicePath, service.fnPath(useTypeScript ? '.ts' : '.js')(fn))]
     )
   );
 };
